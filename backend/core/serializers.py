@@ -1,0 +1,15 @@
+from .models import List, Item
+from rest_framework import serializers
+
+class ItemSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Item
+        fields = '__all__'
+
+class ListSerializer(serializers.HyperlinkedModelSerializer):
+    item_set = ItemSerializer(many=True, read_only=True, required=False)
+    class Meta:
+        model = List
+        fields = ['id','name', 'owner', 'url', 'item_set']
+
+
