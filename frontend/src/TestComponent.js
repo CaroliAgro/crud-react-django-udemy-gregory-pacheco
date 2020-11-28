@@ -3,7 +3,7 @@ import React from 'react';
 export default class TestComponent extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {owner: '', name: '', item_set: []};
+    this.state = {owner: 'http://localhost:8000/users/3/', name: '', item_set: []};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
